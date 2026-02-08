@@ -1,0 +1,12 @@
+{
+  "columns": ["backlog", "in-progress", "review", "done"],
+  "cards": [
+    { "id": "1", "title": "GitHub Token Setup", "assignee": "Alex", "description": "Set up GitHub personal access tokens for CI/CD pipeline access.", "priority": "medium", "column": "backlog" },
+    { "id": "2", "title": "Consultant Org Chart Review", "assignee": "Kah", "description": "Review and update the consultant organizational chart.", "priority": "medium", "column": "backlog" },
+    { "id": "3", "title": "Physician Contract Analyzer - Product Spec", "assignee": "Raj", "description": "Write detailed product specification.", "priority": "high", "column": "in-progress" },
+    { "id": "4", "title": "Build Task Board App", "assignee": "Jim", "description": "Minimal Trello-style task board with drag-and-drop.", "priority": "urgent", "column": "done" },
+    { "id": "5", "title": "Chicago B2B Outreach", "assignee": "Scopey", "description": "B2B outreach targeting Chicago-area businesses.", "priority": "medium", "column": "backlog" },
+    { "id": "6", "title": "Physician Contract Analyzer - Backend", "assignee": "Jim", "description": "Backend API and PDF parsing engine.", "priority": "high", "column": "done" },
+    { "id": "7", "title": "Physician Contract Analyzer - Landing Page", "assignee": "Scopey", "description": "Marketing landing page.", "priority": "high", "column": "done" }
+  ]
+}

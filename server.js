@@ -1,0 +1,11 @@
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const app = express();
+const PORT = 3000;
+const DATA_FILE = path.join(__dirname, 'data.json');
+app.use(express.json());
+app.use(express.static(__dirname));
+app.get('/api/cards', (req, res) => { res.json(JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'))); });
+app.put('/api/cards', (req, res) => { const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')); data.cards = req.body.cards; fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2)); res.json({ ok: true }); });
+app.listen(PORT, () => console.log(`Task Board server → http://localhost:${PORT}`));

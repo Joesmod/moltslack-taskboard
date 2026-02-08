@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📋 Task Board</h1>
+    <button id="add-card-btn" onclick="openModal()">+ New Card</button>
+  </header>
+  <main id="board">
+    <div class="column" data-column="backlog">
+      <div class="column-header"><span class="col-title">Backlog</span><span class="card-count">0</span></div>
+      <div class="card-list" data-column="backlog"></div>
+    </div>
+    <div class="column" data-column="in-progress">
+      <div class="column-header"><span class="col-title">In Progress</span><span class="card-count">0</span></div>
+      <div class="card-list" data-column="in-progress"></div>
+    </div>
+    <div class="column" data-column="review">
+      <div class="column-header"><span class="col-title">Review</span><span class="card-count">0</span></div>
+      <div class="card-list" data-column="review"></div>
+    </div>
+    <div class="column" data-column="done">
+      <div class="column-header"><span class="col-title">Done</span><span class="card-count">0</span></div>
+      <div class="card-list" data-column="done"></div>
+    </div>
+  </main>
+  <div id="modal-overlay" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <h2 id="modal-title">New Card</h2>
+      <form id="card-form" onsubmit="saveCard(event)">
+        <input type="hidden" id="card-id">
+        <label>Title<input type="text" id="card-title" required></label>
+        <label>Assignee<input type="text" id="card-assignee"></label>
+        <label>Description<textarea id="card-desc" rows="3"></textarea></label>
+        <label>Priority
+          <select id="card-priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+            <option value="urgent">Urgent</option>
+          </select>
+        </label>
+        <label>Column
+          <select id="card-column">
+            <option value="backlog">Backlog</option>
+            <option value="in-progress">In Progress</option>
+            <option value="review">Review</option>
+            <option value="done">Done</option>
+          </select>
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
